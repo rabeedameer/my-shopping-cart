@@ -15,7 +15,8 @@ const productsReducer = (products= {}, action) => {
         }
       }
     default:
-      return products
+      return products;
+
   }
 };
 
