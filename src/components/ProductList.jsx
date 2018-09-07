@@ -12,11 +12,11 @@ class ProductList extends Component {
     return(
       <div>
         <h2>Welcome to my shopping cart</h2>
-        <ul class="list-group">
+        <ul classname="list-group">
           {products.map(item => (
-            <li key={item.id} class="list-group-item">
+            <li key={item.id} className="list-group-item">
               <p>{item.title}|  ${item.price} {item.inventory > 0 ? `| x${item.inventory}` : ''}</p>
-              <button onClick={() => add(item)} disabled={item.inventory <= 0}>{item.inventory > 0 ? 'Add to Cart' : 'Sold out'}</button>
+              <button className="btn btn-dark" onClick={() => add(item)} disabled={item.inventory <= 0}>{item.inventory > 0 ? 'Add to Cart' : 'Sold out'}</button>
             </li>)) }
         </ul>
       </div>)

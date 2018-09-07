@@ -11,22 +11,22 @@ class CartList extends Component {
     return (
       <div>
         <h2>Checkout your Cart</h2>
-        <ul>
+        <ul className="list-group">
           {
-            cart.map(cartItem => (<li key={cartItem.id}>
+            cart.map(cartItem => (<li key={cartItem.id} className="list-group-item">
               <p>
                 {cartItem.title}
                 | ${cartItem.price}
                 | x{cartItem.quantity}
               </p>
-              <button onClick={() => remove(cartItem)} disabled={cartItem.quantity <= 0}>
+              <button className="btn btn-dark" onClick={() => remove(cartItem)} disabled={cartItem.quantity <= 0}>
                 {
                   cartItem.quantity <= 0
                     ? ''
                     : 'Remove one'
                 }
               </button>
-              <button>Remove all</button>
+              <button className="btn btn-dark m-1">Remove all</button>
             </li>))
           }
 
