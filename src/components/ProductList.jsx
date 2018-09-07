@@ -10,14 +10,16 @@ class ProductList extends Component {
     const {products, add} = this.props; // products = this.props.products // the same.
     // const {add} =  this.props; // add = this.props.add
     return(
-      <ul>
-        {products.map(item => (
-          <li key={item.id}>
-            <p>{item.title}|  ${item.price} {item.inventory > 0 ? `| x${item.inventory}` : ''}</p>
-            <button onClick={() => add(item)} disabled={item.inventory <= 0}>{item.inventory > 0 ? 'Add to Cart' : 'Sold out'}</button>
-          </li>)) }
-      </ul>
-    )
+      <div>
+        <h2>Welcome to my shopping cart</h2>
+        <ul>
+          {products.map(item => (
+            <li key={item.id}>
+              <p>{item.title}|  ${item.price} {item.inventory > 0 ? `| x${item.inventory}` : ''}</p>
+              <button onClick={() => add(item)} disabled={item.inventory <= 0}>{item.inventory > 0 ? 'Add to Cart' : 'Sold out'}</button>
+            </li>)) }
+        </ul>
+      </div>)
   }
 }
 
